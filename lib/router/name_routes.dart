@@ -23,6 +23,8 @@ abstract class Routes {
   static const String favorite = "/favorite";
   static const String shipTo = "/ship-to";
 
+  static const String review = "/review";
+
   ///Products
   static const String dress = "/dress";
   static const String equipment = "/equipment";
@@ -48,7 +50,7 @@ abstract class Routes {
   static const String password = "/password";
 
   ///Profile //Order
-  static const String order = "/order";
+  static const String order = "/order ";
   static const String orderDetails = "/order-details";
 
 

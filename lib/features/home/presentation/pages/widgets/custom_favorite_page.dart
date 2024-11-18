@@ -48,7 +48,7 @@ class CustomFavoritePage extends StatelessWidget {
                   const SizedBox(height: 16),
                   CustomGridView(
                     icon: AppIcons.delete.svg(),
-                    onTab: () {},
+                    onTab: () {}, product: [],
                   ),
                 ],
               ),

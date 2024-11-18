@@ -30,7 +30,7 @@ class _SplashPageState extends State<SplashPage> {
             right: 0,
             bottom: 24,
             child: Center(
-              child: CircularProgressIndicator(),
+              child: CircularProgressIndicator(color: AppColors.white),
             ),
           ),
           Positioned.fill(

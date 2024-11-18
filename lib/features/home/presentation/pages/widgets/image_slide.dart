@@ -4,8 +4,13 @@ import '../../../../../core/theme/app_color.dart';
 
 class ImageSlider extends StatefulWidget {
   final List<String> images;
+  final bool isNetwork;
 
-  const ImageSlider({super.key, required this.images});
+  const ImageSlider({
+    super.key,
+    required this.images,
+    this.isNetwork = false,
+  });
 
   @override
   State<ImageSlider> createState() => _ImageSliderState();
@@ -13,6 +18,7 @@ class ImageSlider extends StatefulWidget {
 
 class _ImageSliderState extends State<ImageSlider> {
   int currentImageIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -22,8 +28,7 @@ class _ImageSliderState extends State<ImageSlider> {
           child: PageView.builder(
             onPageChanged: (index) {
               setState(() {
-              currentImageIndex = index;
-
+                currentImageIndex = index;
               });
             },
             itemCount: widget.images.length,
@@ -32,8 +37,8 @@ class _ImageSliderState extends State<ImageSlider> {
                 tag: 'image',
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(5),
-                  child: Image.asset(
-                    widget.images[index],
+                  child: Image(
+                    image: widget.isNetwork ? NetworkImage(widget.images[index]) : AssetImage(widget.images[index]),
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -46,15 +51,13 @@ class _ImageSliderState extends State<ImageSlider> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: List.generate(
             widget.images.length,
-                (index) => Container(
+            (index) => Container(
               margin: const EdgeInsets.symmetric(horizontal: 4),
               width: 8,
               height: 8,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                color: currentImageIndex == index
-                    ? AppColors.primary
-                    : AppColors.textFiled,
+                color: currentImageIndex == index ? AppColors.primary : AppColors.textFiled,
               ),
             ),
           ),

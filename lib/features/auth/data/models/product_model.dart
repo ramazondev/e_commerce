@@ -1,4 +1,3 @@
-import 'package:e_commerce/features/auth/data/models/review_model.dart';
 
 class ProductModel {
   final int id;
@@ -12,7 +11,7 @@ class ProductModel {
   final List<num> sizes;
   final String description;
   final Map<String, Object?> specification;
-  final List<ReviewModel> reviewModel;
+  final String? reviewId;
 
   const ProductModel({
     this.id = 0,
@@ -26,7 +25,7 @@ class ProductModel {
     this.sizes = const [],
     this.description = '',
     this.specification = const {},
-    this.reviewModel = const [],
+    this.reviewId,
   });
 
   Map<String, Object?> toJson() {
@@ -42,7 +41,6 @@ class ProductModel {
       'sizes': sizes,
       'description': description,
       'specification': specification,
-      'reviewModel': reviewModel,
     };
   }
 
@@ -59,7 +57,7 @@ class ProductModel {
       sizes: json['sizes']is List ? List.from(json['sizes'] as List)  :const  [],
       description: json['description'] as String? ?? '',
       specification: json['specification'] is Map ?  Map.from(json['specification'] as Map) : const {},
-      reviewModel: (json['reviewModel'] as List).map((e) => ReviewModel.fromJson(e)).toList(),
+      reviewId: json['review_id'] as String?,
     );
   }
 
@@ -77,7 +75,6 @@ class ProductModel {
         'sizes: $sizes, '
         'description: $description, '
         'specification: $specification, '
-        'reviewModel: $reviewModel,'
         '}';
   }
 }
@@ -86,49 +83,44 @@ void main(){
   final json = {
     "id": 1,
     "images": [
-      "https://example.com/image1.jpg",
-      "https://example.com/image2.jpg"
+      "https://image.goat.com/750/attachments/product_template_pictures/images/003/175/597/original/905221_001.png.png",
+      "https://static.cdek.shopping/images/shopping/48fbb7ea20d844b08f1b2bc88c31f4fb.jpg",
+      "https://i.pinimg.com/originals/31/1d/86/311d86a72a138cb064309df49207fcee.png"
     ],
     "name": "FS - Nike Air Max 270 React",
     "rating": 5,
     "currency": "USD",
     "price": "299.43",
-    "colors": ["Red", "Blue", "Green"],
+    "colors": [
+      "#FF0000",
+      "#0000FF",
+      "#008000",
+      "#FFFF00",
+      "#000000",
+      "#FFFFFF",
+      "#FFA500",
+      "#800080",
+      "#FFC0CB",
+      "#A52A2A",
+      "#808080"
+    ],
     "isLike": true,
-    "sizes": [6,6.5,7,7.5, 8.0,8.5, 9.0],
+    "sizes": [
+      6,
+      6.5,
+      7,
+      7.5,
+      8.0,
+      8.5,
+      9.0
+    ],
     "description": "High-quality running shoes",
     "specification": {
       "Material": "Synthetic",
       "Weight": "250g",
       "Brand": "Nike"
     },
-    "reviewModel": [
-      {
-        "id": 1,
-        "avatar": "https://example.com/avatar1.jpg",
-        "fulName": "John Doe",
-        "description": "Excellent product!",
-        "rating": 5,
-        "images": [
-          "https://example.com/review-image1.jpg",
-          "https://example.com/review-image2.jpg"
-        ],
-        "dateTime": "2023-10-01T12:34:56"
-      },
-      {
-        "id": 2,
-        "avatar": "https://example.com/avatar2.jpg",
-        "fulName": "Jane Smith",
-        "description": "Good quality, but runs small.",
-        "rating": 4,
-        "images": [
-          "https://example.com/review-image3.jpg"
-        ],
-        "dateTime": "2023-10-05T09:22:00"
-      }
-    ]
   };
-  print(ProductModel.fromJson(json));
 
 
 }

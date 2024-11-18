@@ -1,13 +1,16 @@
 import 'package:e_commerce/features/account/presentation/pages/account_page.dart';
 import 'package:e_commerce/features/account/presentation/pages/order/order_page.dart';
 import 'package:e_commerce/features/account/presentation/pages/order/widgets/order_details.dart';
+import 'package:e_commerce/features/auth/data/repository/api_repository.dart';
 import 'package:e_commerce/features/auth/presentation/pages/auth/auth_page.dart';
 import 'package:e_commerce/features/auth/presentation/pages/confirm/confirm_page.dart';
 import 'package:e_commerce/features/cart/presentation/pages/cart_page.dart';
 import 'package:e_commerce/features/cart/presentation/pages/widgets/w_ship_to.dart';
 import 'package:e_commerce/features/explore/presentation/pages/explore_page.dart';
+import 'package:e_commerce/features/home/bloc/review_bloc/review_bloc.dart';
 import 'package:e_commerce/features/home/presentation/pages/widgets/custom_favorite_page.dart';
 import 'package:e_commerce/features/home/presentation/pages/widgets/product_detail.dart';
+import 'package:e_commerce/features/home/presentation/pages/widgets/review_product.dart';
 import 'package:e_commerce/features/home/presentation/pages/widgets/super_flash_sale.dart';
 import 'package:e_commerce/features/offer/presentation/pages/offer_page.dart';
 import 'package:e_commerce/features/others/presentation/pages/splash/splash_page.dart';
@@ -22,7 +25,9 @@ import '../features/account/presentation/pages/profile/widgets/email.dart';
 import '../features/account/presentation/pages/profile/widgets/gender.dart';
 import '../features/account/presentation/pages/profile/widgets/password.dart';
 import '../features/account/presentation/pages/profile/widgets/phone_number.dart';
+import '../features/auth/data/repository/review_repository.dart';
 import '../features/auth/presentation/pages/register/register_page.dart';
+import '../features/home/bloc/product_bloc/product_bloc.dart';
 import '../features/home/presentation/pages/home_page.dart';
 import '../features/main/presentation/bloc/main_bloc.dart';
 import '../features/main/presentation/pages/main_page.dart';
@@ -135,12 +140,41 @@ final GoRouter router = GoRouter(
       parentNavigatorKey: rootNavigatorKey,
       builder: (_, __) => const OrderDetails(),
     ),
+    // GoRoute(
+    //   path: Routes.productDetail,
+    //   name: Routes.productDetail,
+    //   parentNavigatorKey: rootNavigatorKey,
+    //   builder: (_, __) => const ProductDetail(),
+    // ),
+    GoRoute(
+      path: Routes.review,
+      name: Routes.review,
+      parentNavigatorKey: rootNavigatorKey,
+      builder: (context, state) {
+        final args = state.extra as ReviewProductArgs;
+        return BlocProvider(
+          create: (context) => ReviewBloc(const ReviewRepositoryImpl(ApiService.instance))
+            ..add(
+              GetReviewsEvent(
+                reviewsId: args.reviewId,
+              ),
+            ),
+          child: const ReviewProduct(),
+        );
+      },
+    ),
     GoRoute(
       path: Routes.detail,
       name: Routes.detail,
       parentNavigatorKey: rootNavigatorKey,
-      builder: (context, state) => ProductDetail(
-        name: state.extra as String? ?? '',
+      builder: (context, state) => MultiBlocProvider(
+        providers: [
+          BlocProvider(
+            create: (context) => ProductBloc(const FakeProductRepoImpl(ApiService.instance))..add(GetProductEvent(id: state.extra as int?)),
+          ),
+          BlocProvider(create: (context) => ReviewBloc(const ReviewRepositoryImpl(ApiService.instance))),
+        ],
+        child: const ProductDetail(),
       ),
     ),
 
@@ -166,7 +200,7 @@ final GoRouter router = GoRouter(
             GoRoute(
               path: Routes.home,
               name: Routes.home,
-              builder: (_, __) =>  HomePage(),
+              builder: (_, __) => const HomePage(),
             ),
           ],
         ),

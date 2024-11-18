@@ -60,6 +60,7 @@ sealed class AppIcons {
   // Icon Star
 
   static const String starYel = 'assets/icons/star_yellow.svg';
+  static const String starGr = 'assets/icons/star_green.svg';
 }
 
 extension AppSvgExt on String {

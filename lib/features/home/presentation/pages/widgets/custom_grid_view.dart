@@ -1,13 +1,20 @@
 import 'package:e_commerce/core/theme/app_icons.dart';
 import 'package:e_commerce/core/theme/app_images.dart';
+import 'package:e_commerce/features/auth/data/models/product_model.dart';
 import 'package:flutter/material.dart';
 import '../../../../../core/theme/app_color.dart';
 
 class CustomGridView extends StatelessWidget {
+  final List<ProductModel>product;
   final Widget? icon;
   final Function()? onTab;
 
-  const CustomGridView({super.key, this.icon, this.onTab});
+  const CustomGridView({
+    super.key,
+    this.icon,
+    this.onTab,
+    required this.product,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -37,8 +44,8 @@ class CustomGridView extends StatelessWidget {
       itemCount: images.length,
       itemBuilder: (context, index) {
         return SizedBox(
-          width: size.width*0.45,
-          height: size.width*0.35,
+          width: size.width * 0.45,
+          height: size.width * 0.35,
           child: DecoratedBox(
             decoration: BoxDecoration(
               color: Colors.transparent,
@@ -79,8 +86,8 @@ class CustomGridView extends StatelessWidget {
                         Padding(
                           padding: const EdgeInsets.only(right: 4.0),
                           child: AppIcons.starYel.svg(
-                            width: size.width*0.025,
-                            height: size.width*0.025,
+                            width: size.width * 0.025,
+                            height: size.width * 0.025,
                             color: i < 4 ? null : AppColors.textGreen,
                           ),
                         ),

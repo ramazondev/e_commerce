@@ -1,3 +1,4 @@
+import 'package:e_commerce/features/home/presentation/pages/widgets/review_product.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -28,7 +29,7 @@ class CustomListView extends StatelessWidget {
               onTap: () {
                 context.pushNamed(
                   Routes.detail,
-                  extra: product.name,
+                  extra: product.id,
                 );
               },
               child: SizedBox(
@@ -62,8 +63,7 @@ class CustomListView extends StatelessWidget {
                         ),
                         const SizedBox(height: 8),
                         Text(
-                          "\$${(double.parse(product.price) * 1.2).toStringAsFixed(2)}"
-                          ,
+                          "\$${(double.parse(product.price) * 1.2).toStringAsFixed(2)}",
                           style: const TextStyle(
                             color: AppColors.primary,
                             fontFamily: 'Poppins',
@@ -76,7 +76,7 @@ class CustomListView extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                        "\$${(double.parse(product.price) * 1.2).toStringAsFixed(2)}",
+                              "\$${(double.parse(product.price) * 1.2).toStringAsFixed(2)}",
                               style: const TextStyle(
                                 fontFamily: 'Poppins',
                                 color: AppColors.textGreen,

@@ -2,133 +2,126 @@
   {
     "id": 1,
     "images": [
-      "https://example.com/image1.jpg",
-      "https://example.com/image2.jpg"
+      "https://image.goat.com/750/attachments/product_template_pictures/images/003/175/597/original/905221_001.png.png",
+      "https://static.cdek.shopping/images/shopping/48fbb7ea20d844b08f1b2bc88c31f4fb.jpg",
+      "https://i.pinimg.com/originals/31/1d/86/311d86a72a138cb064309df49207fcee.png"
     ],
     "name": "FS - Nike Air Max 270 React",
     "rating": 5,
     "currency": "USD",
     "price": "299.43",
-    "colors": ["Red", "Blue", "Green"],
+    "colors": [
+      "#FF0000",
+      "#0000FF",
+      "#008000",
+      "#FFFF00",
+      "#000000",
+      "#FFFFFF",
+      "#FFA500",
+      "#800080",
+      "#FFC0CB",
+      "#A52A2A",
+      "#808080"
+    ],
     "isLike": true,
-    "sizes": [6, 6.5, 7, 7.5, 8.0, 8.5, 9.0],
+    "sizes": [
+      6,
+      6.5,
+      7,
+      7.5,
+      8.0,
+      8.5,
+      9.0
+    ],
     "description": "High-quality running shoes",
     "specification": {
       "Material": "Synthetic",
       "Weight": "250g",
       "Brand": "Nike"
     },
-    "reviewModel": [
-      {
-        "id": 1,
-        "avatar": "https://example.com/avatar1.jpg",
-        "fulName": "John Doe",
-        "description": "Excellent product!",
-        "rating": 5,
-        "images": [
-          "https://example.com/review-image1.jpg",
-          "https://example.com/review-image2.jpg"
-        ],
-        "dateTime": "2023-10-01T12:34:56"
-      },
-      {
-        "id": 2,
-        "avatar": "https://example.com/avatar2.jpg",
-        "fulName": "Jane Smith",
-        "description": "Good quality, but runs small.",
-        "rating": 4,
-        "images": [
-          "https://example.com/review-image3.jpg"
-        ],
-        "dateTime": "2023-10-05T09:22:00"
-      }
-    ]
+    "review_id": "review_1"
   },
   {
     "id": 2,
     "images": [
-      "https://example.com/image3.jpg",
-      "https://example.com/image4.jpg"
+      "https://image.goat.com/750/attachments/product_template_pictures/images/003/175/597/original/905221_001.png.png",
+      "https://static.cdek.shopping/images/shopping/48fbb7ea20d844b08f1b2bc88c31f4fb.jpg"
     ],
-    "name": "FS - Adidas Ultraboost 21",
+    "name": "FS - Adidas Ultra boost 21",
     "rating": 4,
     "currency": "USD",
     "price": "220.00",
-    "colors": ["Black", "White", "Gray"],
+    "colors": [
+      "#FF0000",
+      "#0000FF",
+      "#008000",
+      "#FFFF00",
+      "#000000",
+      "#FFFFFF",
+      "#FFA500",
+      "#800080",
+      "#FFC0CB",
+      "#A52A2A",
+      "#808080"
+    ],
     "isLike": false,
-    "sizes": [5.5, 6, 6.5, 7, 8, 9, 10],
+    "sizes": [
+      6,
+      6.5,
+      7,
+      7.5,
+      8.0,
+      8.5,
+      9.0
+    ],
     "description": "Comfortable running shoes for all-day wear",
     "specification": {
       "Material": "Mesh",
       "Weight": "280g",
       "Brand": "Adidas"
     },
-    "reviewModel": [
-      {
-        "id": 3,
-        "avatar": "https://example.com/avatar3.jpg",
-        "fulName": "Alice Johnson",
-        "description": "Very comfortable, highly recommend!",
-        "rating": 5,
-        "images": [],
-        "dateTime": "2023-11-15T10:45:00"
-      },
-      {
-        "id": 4,
-        "avatar": "https://example.com/avatar4.jpg",
-        "fulName": "Robert Brown",
-        "description": "A bit pricey, but worth it.",
-        "rating": 4,
-        "images": [
-          "https://example.com/review-image4.jpg"
-        ],
-        "dateTime": "2023-11-18T08:30:00"
-      }
-    ]
+    "review_id": "review_1"
   },
   {
     "id": 3,
     "images": [
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHTe1qZz1y_UBH3pI33CFXcQiDpgyYAzT9CQ&s",
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHTe1qZz1y_UBH3pI33CFXcQiDpgyYAzT9CQ&s",
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHTe1qZz1y_UBH3pI33CFXcQiDpgyYAzT9CQ&s",
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHTe1qZz1y_UBH3pI33CFXcQiDpgyYAzT9CQ&s"
-
+      "https://image.goat.com/750/attachments/product_template_pictures/images/003/175/597/original/905221_001.png.png",
+      "https://static.cdek.shopping/images/shopping/48fbb7ea20d844b08f1b2bc88c31f4fb.jpg",
+      "https://i.pinimg.com/originals/31/1d/86/311d86a72a138cb064309df49207fcee.png"
     ],
     "name": "FS - Puma RS-X",
     "rating": 3,
     "currency": "USD",
     "price": "180.50",
-    "colors": ["White", "Blue"],
+    "colors": [
+      "#FF0000",
+      "#0000FF",
+      "#008000",
+      "#FFFF00",
+      "#000000",
+      "#FFFFFF",
+      "#FFA500",
+      "#800080",
+      "#FFC0CB",
+      "#A52A2A",
+      "#808080"
+    ],
     "isLike": true,
-    "sizes": [6, 7, 8, 9, 10, 11],
+    "sizes": [
+      6,
+      6.5,
+      7,
+      7.5,
+      8.0,
+      8.5,
+      9.0
+    ],
     "description": "Trendy street-style sneakers",
     "specification": {
       "Material": "Leather",
       "Weight": "310g",
       "Brand": "Puma"
     },
-    "reviewModel": [
-      {
-        "id": 5,
-        "avatar": "https://example.com/avatar5.jpg",
-        "fulName": "Emma Wilson",
-        "description": "Stylish and comfortable.",
-        "rating": 4,
-        "images": [
-          "https://example.com/review-image5.jpg"
-        ],
-        "dateTime": "2023-12-01T12:00:00"
-      },
-      {
-        "id": 6,
-        "avatar": "https://example.com/avatar6.jpg",
-        "fulName": "Liam Lee",
-        "description": "Not as durable as I expected.",
-        "rating": 3,
-        "images": [],
-        "dateTime": "2023-12-02T15:15:00"
-      }
-    ]
+    "review_id": "review_1"
   }
 ]

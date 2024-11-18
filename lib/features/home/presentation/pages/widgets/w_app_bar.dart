@@ -1,5 +1,3 @@
-import 'package:dio/dio.dart';
-import 'package:e_commerce/features/auth/data/repository/api_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../../../../../core/theme/app_color.dart';
@@ -66,7 +64,7 @@ class WAppBar extends StatelessWidget implements PreferredSizeWidget {
           hoverColor: AppColors.transparent,
           icon: AppIcons.notification.svg(),
           onPressed: () async{
-            print(await ApiRepository(dio: Dio()).loadProducts());
+            // print(await ApiRepository(dio: Dio()).loadProducts());
           },
         ),
       ],

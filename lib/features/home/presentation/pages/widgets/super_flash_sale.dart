@@ -100,7 +100,7 @@ class SuperFlashSale extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 8),
-                  const CustomGridView(),
+                  const CustomGridView(product: [],),
                 ],
               ),
             ),
